@@ -28,10 +28,13 @@ void limparBuffer() {
     //[VARIÁVEIS DE REGRAS]//
     
     int opcao;
-    int atributoSelecionado;
+    int atributo1;
+    int atributo2;
     int resultado;
     float totalA, totalB;
-    float ataqueA, ataqueB;
+    float ataqueA1, ataqueB1;
+    float ataqueA2, ataqueB2;
+    float somaA, somaB;
 
     //[MENU INICIAL]//
 
@@ -138,15 +141,15 @@ void limparBuffer() {
 
     //[COMPARAÇÃO DE ATRIBUTOS DAS CARTAS]//
 
-    printf("\n[ESCOLHA O ATRIBUTO A SER COMPARADO!]\n1. População\n2. Área\n3. PIB\n4. Pontos Turísticos\n5. Densidade Populacional\n6. PIB per capita\n7. SUPER PODER\n");
-    scanf("%d", &atributoSelecionado);
+    printf("\n[ESCOLHA O PRIMEIRO ATRIBUTO A SER COMPARADO!]\n1. População\n2. Área\n3. PIB\n4. Pontos Turísticos\n5. Densidade Populacional\n6. PIB per capita\n7. SUPER PODER\n");
+    scanf("%d", &atributo1);
 
-    switch (atributoSelecionado) {
+    switch (atributo1) {
 
         case 1: //COMPARAÇÃO DE POPULAÇÃO
 
-        ataqueA = populacaoA;
-        ataqueB = populacaoB;
+        ataqueA1 = populacaoA;
+        ataqueB1 = populacaoB;
 
         if (populacaoA > populacaoB) {
               resultado = 1; }
@@ -157,8 +160,8 @@ void limparBuffer() {
 
         case 2: //COMPARAÇÃO DE ÁREA
 
-        ataqueA = areaA;
-        ataqueB = areaB;
+        ataqueA1 = areaA;
+        ataqueB1 = areaB;
 
         if (areaA > areaB) {
               resultado = 1; }
@@ -169,8 +172,8 @@ void limparBuffer() {
 
         case 3: //COMPARAÇÃO DE PIB
 
-        ataqueA = pibA;
-        ataqueB = pibB;
+        ataqueA1 = pibA;
+        ataqueB1 = pibB;
 
         if (pibA > pibB) {
               resultado = 1; }
@@ -181,8 +184,8 @@ void limparBuffer() {
         
         case 4: //COMPARAÇÃO DE PONTOS TURÍSTICOS
 
-        ataqueA = pontA;
-        ataqueB = pontB;
+        ataqueA1 = pontA;
+        ataqueB1 = pontB;
 
         if (pontA > pontB) {
               resultado = 1; }
@@ -193,8 +196,8 @@ void limparBuffer() {
 
         case 5: //COMPARAÇÃO DE DENSIDADE POPULACIONAL INVERTIDA
 
-        ataqueA = densInvA;
-        ataqueB = densInvB;
+        ataqueA1 = densInvA;
+        ataqueB1 = densInvB;
 
         if (densInvA > densInvB) {
               resultado = 1; }
@@ -205,8 +208,8 @@ void limparBuffer() {
 
         case 6: //COMPARAÇÃO DE PIB PER CAPITA
 
-        ataqueA = pibCaptaA;
-        ataqueB = pibCaptaB;
+        ataqueA1 = pibCaptaA;
+        ataqueB1 = pibCaptaB;
 
         if (pibCaptaA > pibCaptaB) {
               resultado = 1; }
@@ -217,8 +220,8 @@ void limparBuffer() {
 
         case 7: //COMPARAÇÃO DE SUPER PODER
 
-        ataqueA = superA;
-        ataqueB = superB;
+        ataqueA1 = superA;
+        ataqueB1 = superB;
 
         if (superA > superB) {
               resultado = 1; }
@@ -228,19 +231,112 @@ void limparBuffer() {
         break;
     }
 
+    printf("\n[ESCOLHA O SEGUNDO ATRIBUTO A SER COMPARADO!]\n1. População\n2. Área\n3. PIB\n4. Pontos Turísticos\n5. Densidade Populacional\n6. PIB per capita\n7. SUPER PODER\n");
+    scanf("%d", &atributo2);
+
+    switch (atributo2) {
+
+        case 1: //COMPARAÇÃO DE POPULAÇÃO
+
+        ataqueA2 = populacaoA;
+        ataqueB2 = populacaoB;
+
+        if (populacaoA > populacaoB) {
+              resultado = 1; }
+        else {
+              resultado = 0;
+           }
+        break;
+
+        case 2: //COMPARAÇÃO DE ÁREA
+
+        ataqueA2 = areaA;
+        ataqueB2 = areaB;
+
+        if (areaA > areaB) {
+              resultado = 1; }
+        else {
+              resultado = 0;
+           }
+        break;
+
+        case 3: //COMPARAÇÃO DE PIB
+
+        ataqueA2 = pibA;
+        ataqueB2 = pibB;
+
+        if (pibA > pibB) {
+              resultado = 1; }
+        else {
+              resultado = 0;
+           }
+        break;
+        
+        case 4: //COMPARAÇÃO DE PONTOS TURÍSTICOS
+
+        ataqueA2 = pontA;
+        ataqueB2 = pontB;
+
+        if (pontA > pontB) {
+              resultado = 1; }
+        else {
+              resultado = 0;
+           }
+        break;
+
+        case 5: //COMPARAÇÃO DE DENSIDADE POPULACIONAL INVERTIDA
+
+        ataqueA2 = densInvA;
+        ataqueB2 = densInvB;
+
+        if (densInvA > densInvB) {
+              resultado = 1; }
+        else {
+              resultado = 0;
+           }
+        break;
+
+        case 6: //COMPARAÇÃO DE PIB PER CAPITA
+
+        ataqueA2 = pibCaptaA;
+        ataqueB2 = pibCaptaB;
+
+        if (pibCaptaA > pibCaptaB) {
+              resultado = 1; }
+        else {
+              resultado = 0;
+           }
+        break;
+
+        case 7: //COMPARAÇÃO DE SUPER PODER
+
+        ataqueA2 = superA;
+        ataqueB2 = superB;
+
+        if (superA > superB) {
+              resultado = 1; }
+        else {
+              resultado = 0;
+           }
+        break;
+    }
+
+    somaA = ataqueA1 + ataqueA2;
+    somaB = ataqueB1 + ataqueB2;
+
     if(resultado = 1) {
-        printf("\n[CARTA 1 COM PODER DE: %.2f!]\n\nV.S\n\n[CARTA 2 COM PODER DE: %.2f!]\n", ataqueA, ataqueB);
-        printf("[CARTA 1 VENCEU!]");
+        printf("\n[CARTA 1 (%s, %s) COM PODER DE: %.2f!]\n\nV.S\n\n[CARTA 2 COM PODER DE: %.2f!]\n", estadoA, cidadeA, somaA, somaB);
+        printf("///[CARTA 1 VENCEU!]///");
     }
     else{
-        printf("\n[CARTA 1 COM PODER DE: %.2f!]\n\nV.S\n\n[CARTA 2 COM PODER DE: %.2f!]\n", ataqueA, ataqueB);
+        printf("\n[CARTA 1 (%s, %s) COM PODER DE: %.2f!]\n\nV.S\n\n[CARTA 2 COM PODER DE: %.2f!]\n", estadoA, cidadeA, somaA, somaB);
         printf("\n///[CARTA 2 VENCEU!]///");
     }
 
     break;
 
     case 2:
-    printf("\nCréditos:\nDerek Luan Leal de Souza\nEstácio\nRev 0");
+    printf("\nCréditos:\nDerek Luan Leal de Souza\nEstácio\nRev 1.0");
     break;
 
     case 3:
